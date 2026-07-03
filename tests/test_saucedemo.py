@@ -86,6 +86,8 @@ class TestSauceDemo:
 
         inventory_page.open_cart()
 
+        assert "/cart.html" in self.driver.current_url, "URL should contain /cart.html"
+
         cart_page = CartPage(self.driver)
         cart_page.wait_until_loaded()
 
