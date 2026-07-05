@@ -16,15 +16,6 @@ def get_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    prefs = {
-        "credentials_enable_service": False,
-        "profile.password_manager_enabled": False,
-        "profile.default_content_setting_values.notifications": 2,
-        "autofill.profile_enabled": False,
-        "autofill.credit_card_enabled": False,
-    }
-    options.add_experimental_option("prefs", prefs)
-
     if is_github_actions:
         options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
